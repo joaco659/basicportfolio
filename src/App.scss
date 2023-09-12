@@ -1,0 +1,262 @@
+@use "sass:math";
+@import "styles/theme-variables.scss";
+
+.mountain-bg {
+  width: 100%;
+  img {
+    // Arregla una linea a la izquierda de la imagen
+    width: calc(100% + 1px);
+    margin-left: -1px;
+  }
+}
+
+// Animaciones
+@-webkit-keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes shake-top {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+  }
+  10% {
+    -webkit-transform: rotate(0.5deg);
+    transform: rotate(0.5deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(1deg);
+    transform: rotate(1deg);
+  }
+  80% {
+    -webkit-transform: rotate(-0.5deg);
+    transform: rotate(-0.5deg);
+  }
+  90% {
+    -webkit-transform: rotate(0.5deg);
+    transform: rotate(0.5deg);
+  }
+}
+@keyframes shake-top {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+  }
+  10% {
+    -webkit-transform: rotate(0.5deg);
+    transform: rotate(0.5deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(1deg);
+    transform: rotate(1deg);
+  }
+  80% {
+    -webkit-transform: rotate(-0.5deg);
+    transform: rotate(-0.5deg);
+  }
+  90% {
+    -webkit-transform: rotate(0.5deg);
+    transform: rotate(0.5deg);
+  }
+}
+
+// Animacion descartada
+// @-webkit-keyframes test {
+//   0% {
+//     $x: (math.round(math.random(300)) * -1);
+//     $y: (math.round(math.random(100)) * -1);
+//     -webkit-transform: translateX(#{$x}px) translateY(#{$y}px);
+//     transform: translateX(#{$x}px) translateY(#{$y}px);
+//   }
+//   50% {
+//     $x: (math.round(math.random(300)) * -1);
+//     $y: (math.round(math.random(100)) * -1);
+//     -webkit-transform: translateX(#{$x}px) translateY(#{$y}px);
+//     transform: translateX(#{$x}px) translateY(#{$y}px);
+//   }
+//   100% {
+//     $x: (math.round(math.random(300)) * -1);
+//     $y: (math.round(math.random(100)) * -1);
+//     -webkit-transform: translateX(#{$x}px) translateY(#{$y}px);
+//     transform: translateX(#{$x}px) translateY(#{$y}px);
+//   }
+// }
+// @keyframes test {
+//   0% {
+//     $x: (math.round(math.random(300)) * -1);
+//     $y: (math.round(math.random(100)) * -1);
+//     -webkit-transform: translateX(#{$x}px) translateY(#{$y}px);
+//     transform: translateX(#{$x}px) translateY(#{$y}px);
+//   }
+//   50% {
+//     $x: (math.round(math.random(300)) * -1);
+//     $y: (math.round(math.random(100)) * -1);
+//     -webkit-transform: translateX(#{$x}px) translateY(#{$y}px);
+//     transform: translateX(#{$x}px) translateY(#{$y}px);
+//   }
+//   100% {
+//     $x: (math.round(math.random(300)) * -1);
+//     $y: (math.round(math.random(100)) * -1);
+//     -webkit-transform: translateX(#{$x}px) translateY(#{$y}px);
+//     transform: translateX(#{$x}px) translateY(#{$y}px);
+//   }
+// }
+
+#inicio {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 15em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  @include themify($app-themes) {
+    color: themed("textColor2");
+  }
+
+  .presentation {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      margin-top: 0.3em;
+      margin-bottom: 0.5em;
+      @include themify($app-themes) {
+        background-color: themed("bgColor1");
+      }
+      padding: 0.25rem 1rem;
+      border-radius: 1rem;
+      text-align: center;
+      font-size: clamp(2.5rem, 3.5vw, 3.6rem);
+      -webkit-animation: shake-top 10s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+        both infinite;
+      animation: shake-top 10s cubic-bezier(0.455, 0.03, 0.515, 0.955) both
+        infinite;
+    }
+    h3 {
+      margin: 0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 1rem;
+      text-align: center;
+      font-size: clamp(2.5rem, 3vw, 3rem);
+    }
+    .titles {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      // position: absolute;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      li {
+        list-style-type: none;
+        margin: 0 1em;
+        font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+        padding: 0.5rem 0.75rem;
+        border-radius: 3rem;
+        -webkit-animation: pulsate-bck 5s ease-in-out infinite both;
+        animation: pulsate-bck 5s ease-in-out infinite both;
+
+        @include themify($app-themes) {
+          background-color: themed("bgColor1");
+        }
+      }
+    }
+  }
+
+  .technologies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -40%;
+    width: 100%;
+
+    &__skill {
+      @include themify($app-themes) {
+        background-color: themed("bgColor1");
+      }
+      font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+      padding: 1em 0.5em;
+      border-radius: 0.5em;
+      margin: 0 1em;
+
+      // Animacion descartada
+      // @for $i from 1 through 6 {
+      //   &:nth-child(#{$i}) {
+      //     -webkit-animation: test
+      //       3s
+      //       cubic-bezier(0.455, 0.03, 0.515, 0.955)
+      //       both
+      //       infinite;
+      //     animation: test
+      //       3s
+      //       cubic-bezier(0.455, 0.03, 0.515, 0.955)
+      //       both
+      //       infinite;
+      //   }
+      // }
+    }
+  }
+}
+
+.transition-peak {
+  width: calc(100% + 1px);
+  margin-left: -1px;
+  margin-top: -5px;
+  @include themify($app-themes) {
+    background-color: themed("bgColor1");
+  }
+  transition: background 0.2s;
+}

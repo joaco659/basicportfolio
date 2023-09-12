@@ -1,0 +1,72 @@
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+$green-primary: #7cd700;
+$green-secondary: #78c70a;
+$black-primary: #202428;
+$black-secondary: #46494c;
+$white-primary: #f4f4ff;
+$white-secondary: #dee7e7;
+
+$app-themes: (
+   light: (
+    bgColor1: $white-primary,
+    bgColor2: $white-secondary,
+    textColor1: $green-secondary,
+    textColorHover: $green-primary,
+    textColor2: $black-primary,
+  ),
+  dark: (
+    bgColor1: $black-primary,
+    bgColor2: $black-secondary,
+    textColor1: $green-primary,
+    textColorHover: #aaff33,
+    textColor2: $white-primary,
+  ),
+);
+
+$topbar-themes: (
+  light: (
+    bgColorTopbar: $white-primary,
+    textColor1: $green-secondary,
+    textColorHover: $green-primary,
+    textColor2: $black-primary,
+    bgColor2: $white-secondary,
+  ),
+  dark: (
+    bgColorTopbar: $black-primary,
+    textColor1: $green-primary,
+    textColorHover: #aaff33,
+    textColor2: $white-primary,
+    bgColor2: $black-secondary,
+  ),
+);
+
+// $themes: (
+//   light: (
+//     map-get($topbar-themes, "light"),
+//   ),
+//   dark: (
+//     map-get($topbar-themes, "dark"),
+//   ),
+// );
