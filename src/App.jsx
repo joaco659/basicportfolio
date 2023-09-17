@@ -9,12 +9,15 @@ import ThemeContext from "./contexts/theme-context.jsx";
 import Topbar from "./components/Topbar.jsx";
 
 const TECHNOLOGIES = [
-  "JavaScript",
-  "React.js",
-  "Node.js",
-  "SASS",
   "Tailwind",
   "HTML5",
+  "Git",
+  "Github",
+  "Python",
+  "SASS",
+  "Node.js",
+  "JavaScript",
+  "React.js",
 ];
 
 function App() {
@@ -32,7 +35,7 @@ function App() {
           <div id="inicio">
             <div className="presentation">
               <h3>Hola! soy</h3>
-              <h2>Joaquin Medina</h2>
+              <h2>Joaquín Medina</h2>
               <ul className="titles">
                 <li>Desarollador front-end</li>
                 <li>Diseñador UX/UI</li>
@@ -52,6 +55,9 @@ function App() {
           src={`./layered-peaks-2-${theme}.svg`}
           alt="Capa de musgo que cae hacia abajo"
         />
+        <div id="experiencia">
+          <h3>Experiencia</h3>
+        </div>
       </div>
     </ThemeContext.Provider>
   );

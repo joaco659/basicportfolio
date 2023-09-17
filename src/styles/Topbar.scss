@@ -8,6 +8,7 @@
   z-index: 30;
   justify-content: center;
   align-items: center;
+  border-bottom: 2px solid $green-primary;
   @include themify($topbar-themes) {
     background-color: themed("bgColorTopbar");
   }

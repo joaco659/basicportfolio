@@ -7,6 +7,7 @@
     // Arregla una linea a la izquierda de la imagen
     width: calc(100% + 1px);
     margin-left: -1px;
+    margin-bottom: -10px;
   }
 }
 
@@ -218,20 +219,32 @@
   .technologies {
     display: flex;
     justify-content: center;
+    flex-flow: row wrap;
     align-items: center;
     position: absolute;
-    bottom: -40%;
-    width: 100%;
+    bottom: -85%;
+    gap: 10px;
+    width: 25rem;
 
     &__skill {
       @include themify($app-themes) {
         background-color: themed("bgColor1");
+        border: 2px solid themed("textColor1");
       }
-      font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+      flex-grow: 1;
+      font-size: clamp(0.9rem, 1.15vw, 1.1rem);
       padding: 1em 0.5em;
       border-radius: 0.5em;
-      margin: 0 1em;
+      text-align: center;
+      transition: transform 0.2s;
 
+      &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        @include themify($app-themes) {
+          color: themed("textColor1");
+        }
+      }
       // Animacion descartada
       // @for $i from 1 through 6 {
       //   &:nth-child(#{$i}) {
@@ -252,11 +265,31 @@
 }
 
 .transition-peak {
+  // position: absolute;
+  // z-index: -1;
   width: calc(100% + 1px);
   margin-left: -1px;
-  margin-top: -5px;
+  margin-bottom: -5px;
   @include themify($app-themes) {
     background-color: themed("bgColor1");
   }
   transition: background 0.2s;
+}
+
+#experiencia {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+  @include themify($app-themes) {
+    background-color: themed("bgColor1");
+  }
+
+  h3 {
+    @include themify($app-themes) {
+      color: themed("textColor1");
+    }
+    font-size: clamp(2.4rem, 3.4vw, 3.5rem);
+  }
 }
