@@ -31,6 +31,8 @@ function App() {
           <img
             src={`./layered-peaks-1-${theme}.svg`}
             alt="Montañas con un cielo azul claro de fondo"
+            // eslint-disable-next-line react/no-unknown-property
+            load="lazy"
           />
           <div id="inicio">
             <div className="presentation">
@@ -57,6 +59,14 @@ function App() {
         />
         <div id="experiencia">
           <h3>Experiencia</h3>
+
+          <div className="message">
+            <p>
+              Aunque sea Junior, estoy en constante búsqueda de experiencias que
+              me ayuden a desarrollar mis habilidades.
+            </p>
+            <i className="fa-regular fa-face-smile"></i>
+          </div>
         </div>
       </div>
     </ThemeContext.Provider>

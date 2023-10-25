@@ -279,6 +279,7 @@
 #experiencia {
   width: 100%;
   display: flex;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   transition: background 0.2s;
@@ -290,6 +291,30 @@
     @include themify($app-themes) {
       color: themed("textColor1");
     }
+    margin-bottom: 0;
     font-size: clamp(2.4rem, 3.4vw, 3.5rem);
+
+    &:target {
+      text-decoration: underline;
+    }
+  }
+
+  .message {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    @include themify($app-themes) {
+      color: themed("textColor1");
+    }
+    font-size: clamp(1rem, 1.16vw, 1.2rem);
+
+    i {
+      font-size: clamp(1.4rem, 1.2vw, 1.6rem);
+    }
+  }
+
+  &:target {
+    h3 {text-decoration: underline;}
   }
 }
