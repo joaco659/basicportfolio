@@ -353,12 +353,14 @@
       color: themed("textColor2");
     }
     width: 65vw;
+    max-width: 1200px;
+    min-height: 21rem;
+    height: 28vw;
+    max-height: 33rem;
     padding: 1em;
     margin-top: 3em;
     border: 2px solid $green-secondary;
     border-radius: 0.5em;
-    max-width: 1200px;
-    height: 23rem;
     display: grid;
 
     grid-template-columns: repeat(5, 1fr);
@@ -405,8 +407,17 @@
         margin-left: 0.8rem;
         font-size: clamp(2rem, 3vw, 3.1rem);
 
-        a:visited {
-          color: $green-secondary
+        a {
+          opacity: 0.7;
+          text-decoration: none;
+
+          &:visited {
+            color: $green-secondary;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }
