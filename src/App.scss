@@ -11,6 +11,14 @@
   }
 }
 
+@mixin on-target() {
+  &:target {
+    h3 {
+      text-decoration: underline;
+    }
+  }
+}
+
 // Animaciones
 @-webkit-keyframes pulsate-bck {
   0% {
@@ -293,10 +301,6 @@
     }
     margin-bottom: 0;
     font-size: clamp(2.4rem, 3.4vw, 3.5rem);
-
-    &:target {
-      text-decoration: underline;
-    }
   }
 
   .message {
@@ -314,7 +318,118 @@
     }
   }
 
-  &:target {
-    h3 {text-decoration: underline;}
+  @include on-target();
+}
+
+#proyectos {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+  @include themify($app-themes) {
+    background-color: themed("bgColor1");
+  }
+
+  h3 {
+    color: red;
+    @include themify($app-themes) {
+      color: themed("textColor1");
+    }
+    margin-bottom: 0;
+    font-size: clamp(2.4rem, 3.4vw, 3.5rem);
+  }
+
+  & > p {
+    @include themify($app-themes) {
+      color: themed("textColor1");
+    }
+  }
+
+  .project-card {
+    @include themify($app-themes) {
+      background-color: themed("bgColor2");
+      color: themed("textColor2");
+    }
+    width: 65vw;
+    padding: 1em;
+    border: 2px solid $green-secondary;
+    border-radius: 0.5em;
+    max-width: 1200px;
+    height: 23rem;
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "img img h4 h4 h4"
+      "img img arti arti arti"
+      "img img arti arti arti"
+      "ul ul arti arti arti";
+    .icon {
+      background: url("./layered-peaks-1-dark.svg") no-repeat center;
+      background-size: cover;
+      border-radius: 0.5em;
+      grid-area: img;
+      // width: 100%;
+      // height: 100%;
+    }
+
+    .title {
+      grid-area: h4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(1.1rem, 1.6vw, 1.7rem);
+    }
+
+    .description {
+      grid-area: arti;
+      text-align: center;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      grid-area: ul;
+
+      li {
+        color: $green-secondary;
+        list-style-type: none;
+        margin-left: 0.8rem;
+        font-size: clamp(2rem, 3vw, 3.1rem);
+
+        a:visited {
+          color: $green-secondary
+        }
+      }
+    }
+  }
+
+  @include on-target();
+}
+
+.credits {
+  @include themify($app-themes) {
+    background-color: themed("bgColor2");
+    color: themed("textColor2");
+  }
+  width: 100%;
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em 0;
+
+  p {
+    margin: 0;
+    i {
+      @include themify($app-themes) {
+        color: themed("textColor1");
+      }
+    }
   }
 }

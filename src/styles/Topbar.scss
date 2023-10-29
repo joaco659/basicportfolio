@@ -54,7 +54,7 @@
     height: 2.5em;
     display: flex;
     align-items: center;
-    border: solid $white-secondary 2px;
+    border: solid $green-secondary 2px;
     border-radius: 3em;
     cursor: pointer;
     @include themify($topbar-themes) {
