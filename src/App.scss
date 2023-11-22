@@ -330,21 +330,12 @@
   transition: background 0.2s;
   @include themify($app-themes) {
     background-color: themed("bgColor1");
+    color: themed("textColor1");
   }
 
   h3 {
-    color: red;
-    @include themify($app-themes) {
-      color: themed("textColor1");
-    }
     margin-bottom: 0;
     font-size: clamp(2.4rem, 3.4vw, 3.5rem);
-  }
-
-  & > p {
-    @include themify($app-themes) {
-      color: themed("textColor1");
-    }
   }
 
   .project-card {
@@ -421,6 +412,53 @@
         }
       }
     }
+  }
+
+  .my-github_p {
+    margin-top: 3em;
+  }
+  .my-github {
+    @include themify($app-themes) {
+      color: themed("textColor2");
+    }
+    background-color: $green-secondary;
+    padding: 1em;
+    border-radius: 0.8em;
+    font-size: clamp(0.9rem, 1.15vw, 1.1rem);
+    transition: all 0.2s;
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    &:visited {
+      @include themify($app-themes) {
+        color: themed("textColor2");
+      }
+    }
+  }
+
+  @include on-target();
+}
+
+#contacto {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+  @include themify($app-themes) {
+    background-color: themed("bgColor1");
+    color: themed("textColor1");
+  }
+
+  h3 {
+    margin-bottom: 0;
+    font-size: clamp(2.4rem, 3.4vw, 3.5rem);
   }
 
   @include on-target();

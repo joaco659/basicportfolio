@@ -143,6 +143,73 @@ function App() {
           {PROJECTS.map((project, i) => (
             <AnimatedCard key={i}>{project.build()}</AnimatedCard>
           ))}
+
+          <p className="my-github_p">Mira mas proyectos en mi github.</p>
+          <a
+            className="my-github"
+            href="https://github.com/joaco659"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            joaco659 <i className="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div id="contacto">
+          <h3>Contacto</h3>
+          <p>
+            Ponte en contacto conmigo, mediante alguna de mis redes sociales o
+            usando este formulario.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/joaquin-medina-9b9945239/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://instagram.com/m.joacoo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-instagram"></i>
+          </a>
+          <form
+            id="fs-frm"
+            name="portfolio-contact-form"
+            acceptCharset="utf-8"
+            action="https://formspree.io/f/mleykyjg"
+            method="post"
+          >
+            <fieldset id="fs-frm-inputs">
+              <label htmlFor="full-name">Nombre</label>
+              <input type="text" name="name" id="full-name" required />
+              <label htmlFor="email-address">Correo electrónico</label>
+              <input
+                type="email"
+                name="_replyto"
+                id="email-address"
+                placeholder="tuemail@dominio.xxx"
+                required
+              />
+              <label htmlFor="message">Mensaje</label>
+              <textarea
+                rows="5"
+                name="message"
+                id="message"
+                placeholder="Tu mensaje aqui."
+                required
+              ></textarea>
+              <input
+                type="hidden"
+                name="_subject"
+                id="email-subject"
+                value="Portfolio Contact Submission"
+              />
+            </fieldset>
+            <input type="submit" value="Enviar" />
+          </form>
         </div>
 
         <footer className="credits">
