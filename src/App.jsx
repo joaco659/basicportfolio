@@ -144,7 +144,7 @@ function App() {
             <AnimatedCard key={i}>{project.build()}</AnimatedCard>
           ))}
 
-          <p className="my-github_p">Mira mas proyectos en mi github.</p>
+          <p className="my-github_p">Mira mas proyectos en mi GitHub.</p>
           <a
             className="my-github"
             href="https://github.com/joaco659"
@@ -161,20 +161,22 @@ function App() {
             Ponte en contacto conmigo, mediante alguna de mis redes sociales o
             usando este formulario.
           </p>
-          <a
-            href="https://www.linkedin.com/in/joaquin-medina-9b9945239/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa-brands fa-linkedin"></i>
-          </a>
-          <a
-            href="https://instagram.com/m.joacoo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa-brands fa-instagram"></i>
-          </a>
+          <div className="social-media">
+            <a
+              href="https://www.linkedin.com/in/joaquin-medina-9b9945239/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://instagram.com/m.joacoo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+          </div>
           <form
             id="fs-frm"
             name="portfolio-contact-form"
@@ -183,6 +185,7 @@ function App() {
             method="post"
           >
             <fieldset id="fs-frm-inputs">
+              <legend>Formulario de contacto</legend>
               <label htmlFor="full-name">Nombre</label>
               <input type="text" name="name" id="full-name" required />
               <label htmlFor="email-address">Correo electrónico</label>
@@ -195,7 +198,8 @@ function App() {
               />
               <label htmlFor="message">Mensaje</label>
               <textarea
-                rows="5"
+                rows="10"
+                maxLength={1000}
                 name="message"
                 id="message"
                 placeholder="Tu mensaje aqui."
@@ -207,14 +211,14 @@ function App() {
                 id="email-subject"
                 value="Portfolio Contact Submission"
               />
+              <input type="submit" value="Enviar" />
             </fieldset>
-            <input type="submit" value="Enviar" />
           </form>
         </div>
 
         <footer className="credits">
           <p>
-            Hecho con <i className="fa-solid fa-heart"></i> por Joaquin Medina
+            Hecho con <i className="fa-solid fa-heart"></i> por Joaquín Medina
           </p>
         </footer>
       </div>

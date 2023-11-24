@@ -320,7 +320,9 @@
 
   @include on-target();
 }
-
+.animated-card {
+  transition: transform 0.1s;
+}
 #proyectos {
   width: 100%;
   display: flex;
@@ -418,9 +420,7 @@
     margin-top: 3em;
   }
   .my-github {
-    @include themify($app-themes) {
-      color: themed("textColor2");
-    }
+    color: $black-primary;
     background-color: $green-secondary;
     padding: 1em;
     border-radius: 0.8em;
@@ -435,9 +435,7 @@
       transform: scale(1.1);
     }
     &:visited {
-      @include themify($app-themes) {
-        color: themed("textColor2");
-      }
+      color: $black-primary;
     }
   }
 
@@ -454,6 +452,77 @@
   @include themify($app-themes) {
     background-color: themed("bgColor1");
     color: themed("textColor1");
+  }
+
+  .social-media {
+    margin-bottom: 1rem;
+    a {
+      color: $green-secondary;
+      font-size: 2rem;
+      margin: 0 0.8rem;
+
+      &:visited {
+        color: $green-secondary;
+      }
+    }
+  }
+
+  #fs-frm {
+    &-inputs {
+      display: flex;
+      justify-content: center;
+      flex-flow: column nowrap;
+      width: clamp(300px, 40vw, 1024px);
+      padding: 1rem;
+      border: 2px solid $green-secondary;
+      border-radius: 0.5em;
+      @include themify($app-themes) {
+        background-color: themed("bgColor2");
+      }
+
+      label {
+        margin-top: 0.7rem;
+        margin-bottom: 0.3rem;
+      }
+
+      label:nth-child(2) {
+        margin-top: 0;
+      }
+
+      #full-name,
+      #email-address,
+      #message {
+        @include themify($app-themes) {
+          background-color: themed("bgColor1");
+          color: themed("textColor2");
+        }
+        border: none;
+        border-radius: 0.3em;
+        padding: 0.3rem;
+      }
+
+      #message {
+        max-width: 1024px;
+      }
+
+      input[type="submit"] {
+        margin-top: 1rem;
+        cursor: pointer;
+        color: $black-primary;
+        background-color: $green-secondary;
+        padding: 1em;
+        align-self: center;
+        border: none;
+        width: 40%;
+        border-radius: 0.3em;
+        font-size: clamp(0.9rem, 1.15vw, 1.1rem);
+        transition: all 0.2s;
+        &:hover {
+          color: $white-primary;
+          box-shadow: inset 0 0 0 2px $white-primary;
+        }
+      }
+    }
   }
 
   h3 {
