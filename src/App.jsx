@@ -216,6 +216,27 @@ function App() {
           </form>
         </div>
 
+        <div id="cv">
+          <h3>Curriculum vitae</h3>
+          <p>
+            Ademas del portafolio, tengo mi currículum donde detallo mas cosas.
+          </p>
+
+          <embed
+            src="./curriculum-vitae-2.pdf"
+            type="application/pdf"
+            width="800"
+          />
+
+          <a
+            href="https://drive.google.com/file/d/1g2Y4QCVmgYlp2OrDs3TDZTAhGkyzQG4k/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-google-drive"></i> Google Drive
+          </a>
+        </div>
+
         <footer className="credits">
           <p>
             Hecho con <i className="fa-solid fa-heart"></i> por Joaquín Medina
